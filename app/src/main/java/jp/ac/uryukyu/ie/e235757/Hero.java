@@ -14,6 +14,22 @@ public class Hero {
     public int attack;
     public boolean dead;
 
+    public String getName(){
+        return this.name;
+    }
+
+    public int getHitPoint(){
+        return this.hitPoint;
+    }
+
+    public int getAttack(){
+        return this.hitPoint;
+    }
+
+    public boolean getDead(){
+        return this.dead;
+    }
+
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name ヒーロー名
@@ -35,7 +51,7 @@ public class Hero {
      */
     public void attack(Enemy e){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.name, damage);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.getName(), damage);
         e.wounded(damage);
     }
 
