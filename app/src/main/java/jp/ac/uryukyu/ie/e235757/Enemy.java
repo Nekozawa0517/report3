@@ -34,9 +34,15 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
+
+        if(dead==false){
         int damage = (int)(Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
         hero.wounded(damage);
+
+
+        } 
+       
     }
 
     /**
@@ -48,7 +54,7 @@ public class Enemy {
         hitPoint -= damage;
         if( hitPoint < 0 ) {
             dead = true;
-            System.out.printf("モンスター%sは倒れた。\n", name);
+            System.out.printf("モンスター%sは倒れた。\n", name);//死んでいるのが正しいとき終わるシステムだよ//
         }
     }
 
