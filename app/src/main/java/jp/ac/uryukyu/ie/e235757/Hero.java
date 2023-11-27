@@ -8,26 +8,56 @@ package jp.ac.uryukyu.ie.e235757;
  *  boolean dead; //敵の生死状態。true=死亡。
  * Created by tnal on 2016/11/13.
  */
-public class Hero {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+public class Hero extends LivingThing {
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
+    
 
+/**
+ * ヒーローの名前のフィールド変数を取り出すgetter
+ * @return　ヒーローの名前
+ */
     public String getName(){
         return this.name;
     }
-
+/**
+ * ヒーローのHPのフィールド変数を取り出すgetter
+ * @return　ヒーローのHP
+ */
     public int getHitPoint(){
         return this.hitPoint;
     }
-
+/**
+ * ヒーロー攻撃力のフィールド変数を取り出すgetter
+ * @return　ヒーローの攻撃力
+ */
     public int getAttack(){
         return this.hitPoint;
     }
-
+/**
+ *　ヒーローの生死状態フィールド変数を取り出すgetter
+ * @return　ヒーローの生死状態
+ */
     public boolean getDead(){
         return this.dead;
+    }
+
+    public void setHitpoint(int hitPoint){
+        this.hitPoint=hitPoint;
+    }
+
+    public void setName(String name){
+        this.name=name;
+    }
+
+    public void setAttack(int attack){
+        this.attack=attack;
+    }
+
+    public void setDead(boolean dead){
+        this.dead=dead;
     }
 
     /**
@@ -37,8 +67,9 @@ public class Hero {
      * @param attack ヒーローの攻撃力
      */
     public Hero (String name, int maximumHP, int attack) {
+        super(name, maximumHP, attack);
         this.name = name;
-        hitPoint = maximumHP;
+        this.hitPoint = maximumHP;
         this.attack = attack;
         dead = false;
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
